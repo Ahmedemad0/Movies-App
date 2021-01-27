@@ -1,0 +1,6 @@
+framework module Pods_YTS_Movie_YTS_MovieUITests {
+  umbrella header "Pods-YTS Movie-YTS MovieUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
