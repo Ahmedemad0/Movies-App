@@ -29,6 +29,8 @@
 		E21EBEB925B485C000F1D724 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21EBEB825B485C000F1D724 /* Data.swift */; };
 		E21EBEC125B4868D00F1D724 /* MovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21EBEC025B4868D00F1D724 /* MovieResponse.swift */; };
 		E21EBED125B4898000F1D724 /* listMovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21EBED025B4898000F1D724 /* listMovieAPI.swift */; };
+		E21EF9FC25C3AE4000A32B52 /* CastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21EF9FB25C3AE4000A32B52 /* CastModel.swift */; };
+		E21EFA0125C3AFAE00A32B52 /* CastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21EFA0025C3AFAE00A32B52 /* CastCell.swift */; };
 		E29AF54B25BF8C8000B7616A /* MovieDetailsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29AF54A25BF8C8000B7616A /* MovieDetailsAPI.swift */; };
 		E29AF55325BF8C9C00B7616A /* MoviesNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29AF55225BF8C9C00B7616A /* MoviesNetworking.swift */; };
 		E29AF55825BF8CE300B7616A /* MovieDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29AF55725BF8CE300B7616A /* MovieDetailsVC.swift */; };
@@ -86,6 +88,8 @@
 		E21EBEB825B485C000F1D724 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		E21EBEC025B4868D00F1D724 /* MovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponse.swift; sourceTree = "<group>"; };
 		E21EBED025B4898000F1D724 /* listMovieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listMovieAPI.swift; sourceTree = "<group>"; };
+		E21EF9FB25C3AE4000A32B52 /* CastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastModel.swift; sourceTree = "<group>"; };
+		E21EFA0025C3AFAE00A32B52 /* CastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCell.swift; sourceTree = "<group>"; };
 		E29AF54A25BF8C8000B7616A /* MovieDetailsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailsAPI.swift; sourceTree = "<group>"; };
 		E29AF55225BF8C9C00B7616A /* MoviesNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesNetworking.swift; sourceTree = "<group>"; };
 		E29AF55725BF8CE300B7616A /* MovieDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsVC.swift; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 				E21E90F625C095C300686BC6 /* MovieDetails.swift */,
 				E21E910025C095E100686BC6 /* resposeDetails.swift */,
 				E21E90FB25C095D100686BC6 /* dataDetails.swift */,
+				E21EF9FB25C3AE4000A32B52 /* CastModel.swift */,
 			);
 			path = MovieDetailsModel;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				E2A84BEE25B73E850054BB84 /* ListMoviesCell.swift */,
+				E21EFA0025C3AFAE00A32B52 /* CastCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -551,6 +557,7 @@
 				E29AF54B25BF8C8000B7616A /* MovieDetailsAPI.swift in Sources */,
 				E21EBE5225B476BA00F1D724 /* ListMoviesVC.swift in Sources */,
 				E21E90F725C095C300686BC6 /* MovieDetails.swift in Sources */,
+				E21EFA0125C3AFAE00A32B52 /* CastCell.swift in Sources */,
 				E21EBE4E25B476BA00F1D724 /* AppDelegate.swift in Sources */,
 				E21EBE5025B476BA00F1D724 /* SceneDelegate.swift in Sources */,
 				C237F6F525B4AE48002F4FF5 /* CustomError.swift in Sources */,
@@ -560,6 +567,7 @@
 				C2015B3D25B9DC4B00D5382A /* UIView + Extensions.swift in Sources */,
 				E21EBED125B4898000F1D724 /* listMovieAPI.swift in Sources */,
 				E21EBEB925B485C000F1D724 /* Data.swift in Sources */,
+				E21EF9FC25C3AE4000A32B52 /* CastModel.swift in Sources */,
 				E2111CE825B4C7F3004E4B2C /* Movie.swift in Sources */,
 				E21E90FC25C095D100686BC6 /* dataDetails.swift in Sources */,
 				E21EBE9E25B4794200F1D724 /* BaseAPI.swift in Sources */,

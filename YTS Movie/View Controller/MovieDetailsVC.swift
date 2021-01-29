@@ -16,12 +16,15 @@ class MovieDetailsVC: UIViewController, YTPlayerViewDelegate {
     @IBOutlet weak var MovieImage: UIImageView!
     @IBOutlet weak var MovieTitle: UILabel!
     @IBOutlet weak var VideoPlayer: YTPlayerView!
+    @IBOutlet weak var Summery: UILabel!
+    @IBOutlet weak var CastCollectionView: UICollectionView!
     
     var id: Int = 9
     // for blur effect
     let blurEffect = UIBlurEffect()
     let image      = UIImageView()
     var moviedetails: MovieDetails!
+//    var cast: [CastModel]!
     override func viewDidLoad() {
         super.viewDidLoad()
         GetMovieDetails()
@@ -41,6 +44,7 @@ class MovieDetailsVC: UIViewController, YTPlayerViewDelegate {
             self.moviedetails = myData.movie
             self.MovieTitle.text = self.moviedetails.title
             self.Rating.text = "\(self.moviedetails.rating) / 10"
+            self.Summery.text = self.moviedetails.summery
             
             // download image
             self.image.downloadImage(url: self.moviedetails.TopBackground, imageView: self.TopBackground)
@@ -64,3 +68,17 @@ class MovieDetailsVC: UIViewController, YTPlayerViewDelegate {
         dismiss(animated: true)
     }
 }
+
+//extension MovieDetailsVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return cast.count
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = CastCollectionView.dequeueReusableCell(withReuseIdentifier: "CastCell", for: indexPath) as! CastCell
+//        cell.Configure(with: cast[indexPath.row])
+//        return cell
+//    }
+//
+//
+//}
