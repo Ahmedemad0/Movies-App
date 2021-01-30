@@ -15,7 +15,7 @@ struct MovieDetails: Codable {
     var rating: Float
     var trailer: String
     var summery: String
-//    var cast: [CastModel]
+    var cast: [CastModel]?
     enum CodingKeys: String, CodingKey{
         case title = "title_long"
         case year = "year"
@@ -25,6 +25,6 @@ struct MovieDetails: Codable {
         case poster = "medium_cover_image"
         case trailer = "yt_trailer_code"
         case summery = "description_full"
-//        case cast = "cast"
+        case cast = "cast"
     }
 }

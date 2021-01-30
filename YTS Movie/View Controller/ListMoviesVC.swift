@@ -46,8 +46,9 @@ class ListMoviesVC: UIViewController, UICollectionViewDelegate, UICollectionView
 //                print(movie.id)
             }
             DispatchQueue.main.async {
-                self.CollectionView.reloadData()
                 self.nextPageNumber += 1
+                self.CollectionView.reloadData()
+                
             }
         }
     }

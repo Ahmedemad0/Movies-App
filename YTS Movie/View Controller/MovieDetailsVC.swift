@@ -19,15 +19,24 @@ class MovieDetailsVC: UIViewController, YTPlayerViewDelegate {
     @IBOutlet weak var Summery: UILabel!
     @IBOutlet weak var CastCollectionView: UICollectionView!
     
+    var castCollectionView: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        return layout
+    }()
+    
     var id: Int = 9
     // for blur effect
     let blurEffect = UIBlurEffect()
     let image      = UIImageView()
     var moviedetails: MovieDetails!
-//    var cast: [CastModel]!
+    var castlist = [CastModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
         GetMovieDetails()
+        CastCollectionView.collectionViewLayout = castCollectionView
+        CastCollectionView.delegate = self
+        CastCollectionView.dataSource = self
 
     }
     
@@ -45,6 +54,11 @@ class MovieDetailsVC: UIViewController, YTPlayerViewDelegate {
             self.MovieTitle.text = self.moviedetails.title
             self.Rating.text = "\(self.moviedetails.rating) / 10"
             self.Summery.text = self.moviedetails.summery
+            self.castlist = myData.movie.cast ?? []
+            for ca in self.castlist {
+                print(ca.name)
+//                print(ca.imageURL)
+            }
             
             // download image
             self.image.downloadImage(url: self.moviedetails.TopBackground, imageView: self.TopBackground)
@@ -67,18 +81,18 @@ class MovieDetailsVC: UIViewController, YTPlayerViewDelegate {
     @IBAction func BackButton(_ sender: Any) {
         dismiss(animated: true)
     }
+ 
 }
+extension MovieDetailsVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-//extension MovieDetailsVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return cast.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = CastCollectionView.dequeueReusableCell(withReuseIdentifier: "CastCell", for: indexPath) as! CastCell
-//        cell.Configure(with: cast[indexPath.row])
-//        return cell
-//    }
-//
-//
-//}
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return castlist.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = CastCollectionView.dequeueReusableCell(withReuseIdentifier: "CastCell", for: indexPath) as! CastCell
+        cell.Configure(with: castlist[indexPath.row])
+        return cell
+    }
+
+}
