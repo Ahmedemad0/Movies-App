@@ -54,10 +54,10 @@ class MovieDetailsVC: UIViewController, YTPlayerViewDelegate {
             self.MovieTitle.text = self.moviedetails.title
             self.Rating.text = "\(self.moviedetails.rating) / 10"
             self.Summery.text = self.moviedetails.summery
-            self.castlist = myData.movie.cast ?? []
+            self.castlist = myData.movie.cast
             for ca in self.castlist {
                 print(ca.name)
-//                print(ca.imageURL)
+                print(ca.imageURL)
             }
             
             // download image
@@ -71,6 +71,10 @@ class MovieDetailsVC: UIViewController, YTPlayerViewDelegate {
             
             // trailer video
             self.VideoPlayer.load(withVideoId: self.moviedetails.trailer, playerVars: ["playsinline": 1])
+            
+            DispatchQueue.main.async {
+                self.CastCollectionView.reloadData()
+            }
         }
         
     }
@@ -94,5 +98,13 @@ extension MovieDetailsVC: UICollectionViewDelegate, UICollectionViewDataSource, 
         cell.Configure(with: castlist[indexPath.row])
         return cell
     }
+
+}
+
+extension MovieDetailsVC {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.size.width / 3 , height: 150)
+    }
+
 
 }
